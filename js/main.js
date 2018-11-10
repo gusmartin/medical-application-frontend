@@ -1,7 +1,7 @@
 function modify(input)
 {
   var id =input;
-  var stat=prompt("Ingrese el estatus del Paciente", "activo/inactivo");
+  var stat=prompt("Ingrese el estatus del Paciente", "active/inactive");
 
   var settings = {
     "async": true,
@@ -23,7 +23,7 @@ function modify(input)
 function modify2(input)
 {
   var id =input;
-  var stat=activo;
+  var stat="active";
 
   var settings = {
     "async": true,
@@ -72,7 +72,7 @@ function login(){
       if(response.login == "false")
         alert("INCORRECT");
       else
-        window.location.replace("C:/Users/Esteban/Documents/GitHub/medical-application-frontend/medico/main.html");
+        window.location.replace("main.html");
     });
 
  }
