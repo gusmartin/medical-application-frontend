@@ -23,7 +23,7 @@ function modify(input)
 function modify2(input)
 {
   var id =input;
-  var stat=activo);
+  var stat=activo;
 
   var settings = {
     "async": true,
