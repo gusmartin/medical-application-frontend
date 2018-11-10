@@ -72,7 +72,7 @@ function login(){
       if(response.login == "false")
         alert("INCORRECT");
       else
-        window.location.replace("C:/Users/Esteban/Documents/GitHub/medical-application-frontend/medico/main.html");
+        window.location.replace("main.html");
     });
 
  }
