@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -18,9 +19,9 @@
                 $.ajax({
                     url: '/songs/',
                     type: 'get',
-                    success: function(data){  
+                    success: function(data){
 
-                        //alert(data); 
+                        //alert(data);
                         var element = document.getElementById("songs2");
                         while (element.hasChildNodes()) {
                             element.removeChild(element.lastChild);
@@ -30,7 +31,7 @@
                         var html = "";
                         html += "<table class='table table-sm table-hover header-fixed'  id='song-listing'>";
                         html += "<thead class='thead-light'><tr><th class = 'song-col'>Song</th><th class = 'artist-col'>Artist</th><th class = 'album-col'>Album</th></tr></thead>";
-                        
+
                         html += "<tbody class = ''>";
                         //alert(obj.length);
                         for (var i = 0; i < obj.length; i++) {
@@ -39,7 +40,7 @@
                             html += "<td class = 'song-col'>"+obj[i].song_name+"</td><td class = 'artist-col'>"+obj[i].artist_name+"</td><td class = 'album-col'>"+obj[i].album_name+"</td>";
                             html += "</tr>";
                         }
-                        
+
                         html += "</tbody>";
                         html += "</table>";
                         html  += "</br></br></br>";
@@ -47,7 +48,7 @@
                         //$("#song-listing").append(html);
                         $("#songs2").append(html);
 
-                        
+
                     },
                     dataType: 'html'
                 });
@@ -105,69 +106,10 @@
                                         <thead class='thead-light'><tr><th class='nombre-col'>Nombre</th><th class='nss-col'>NSS</th><th class='poliza-col'>Poliza</th><th class='act1-col'>Acción 1</th><th class='act2-col'>Acción 2</th></tr></thead>
 
                                         <tbody class = ''>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
+                                            <tr class='song-row' data-href='#'>
+                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary'onclick='modify(112233);' role='button' >Modificar Status</a></td>
                                             </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
-                                                <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>
-                                            </tr> 
+
                                         </tbody>
                                     </table>
                                     </br></br></br>
@@ -189,7 +131,7 @@
                                         <thead class='thead-light'><tr><th class='nombre-col'>Nombre</th><th class='nss-col'>NSS</th><th class='poliza-col'>Poliza</th><th class='act1-col'>Acción 1</th></tr></thead>
 
                                         <tbody class = ''>
-                                            <tr onclick='alert("");' class='song-row' data-href='#'>
+                                            <tr  class='song-row' data-href='#'>
                                                 <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Activar paciente</a></td>
                                             </tr>
                                         </tbody>
@@ -208,5 +150,7 @@
                 </div>
             </div>
         </div>
+         <script src="js/main.js"></script>
     </body>
+
 </html>
