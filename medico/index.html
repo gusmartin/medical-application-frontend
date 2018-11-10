@@ -14,7 +14,7 @@
 
         <script>
            function login(){
-               // alert("hola");
+                alert("hola");
                 var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -26,15 +26,17 @@
                 },
                 "processData": false,
                 //"data": " {\"action\": \"LOGIN\",\"user\": \"gabo@doctor.com\",\"password\": \"password\"}"
-                "data": ' {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}'
+                "data":  {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}
                 }
-
+                    alert("POPO");
                 $.ajax(settings).done(function (response) {
+                    alert("response");
                     alert(response);
                 });
             }
 
-            /*$("#submit").click(function(e) {
+           /* $("#submit").click(function(e) {
+                alert("HELLOE");
                 var settings = {
                 "async": true,
                 "crossDomain": true,
