@@ -9,58 +9,15 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        
+
         <title>Document</title>
-
-        <script>
-           function login(){
-               // alert("hola");
-                var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "http://172.20.10.8:5000/api/v1/doctors/search_doctors",
-                "method": "POST",
-                "headers": {
-                    "Content-Type": "application/json",
-                    "cache-control": "no-cache",
-                },
-                "processData": false,
-                //"data": " {\"action\": \"LOGIN\",\"user\": \"gabo@doctor.com\",\"password\": \"password\"}"
-                "data": ' {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}'
-                }
-
-                $.ajax(settings).done(function (response) {
-                    alert(response);
-                });
-            }
-
-            /*$("#submit").click(function(e) {
-                var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "http://172.20.10.8:5000/api/v1/doctors/search_doctors",
-                "method": "POST",
-                "headers": {
-                    "Content-Type": "application/json",
-                    "cache-control": "no-cache",
-                },
-                "processData": false,
-                //"data": " {\"action\": \"LOGIN\",\"user\": \"gabo@doctor.com\",\"password\": \"password\"}"
-                "data": ' {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}'
-                }
-
-                $.ajax(settings).done(function (response) {
-                    alert(response);
-                });
-    });*/
-        </script>
     </head>
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 ">
-                    
+
                     <div class="row">
                         <div class="col">
                             <h3 class="text-center display-4">Obama Care</h3>
@@ -88,5 +45,6 @@
                 <div class="col-4"></div>
             </div>
         </div>
+        <script src="main.js"></script>
     </body>
 </html>
