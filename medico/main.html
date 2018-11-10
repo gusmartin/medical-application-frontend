@@ -38,10 +38,10 @@
                     <!--TABS PARA EL MENU DE MÉDICO-->
                     <ul class="nav nav-tabs justify-content-center" id="ssuarios" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="usuariosActivos-tab" data-toggle="tab" href="#usuariosActivos" role="tab" aria-controls="usuariosActivos" aria-selected="true">Usuarios Activos</a>
+                            <a class="nav-link active" id="usuariosActivos-tab" data-toggle="tab" href="#usuariosActivos" onclick="loadActiveUsers()" role="tab" aria-controls="usuariosActivos" aria-selected="true">Usuarios Activos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="usuariosInactivos-tab" data-toggle="tab" href="#usuariosInactivos" role="tab" aria-controls="usuariosInactivos" aria-selected="false">Usuarios Inactivos</a>
+                            <a class="nav-link" id="usuariosInactivos-tab" data-toggle="tab" href="#usuariosInactivos" onclick="loadInactiveUsers()" role="tab" aria-controls="usuariosInactivos" aria-selected="false">Usuarios Inactivos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="crearUsuario-tab" data-toggle="tab" href="#crearUsuario" role="tab" aria-controls="crearUsuario" aria-selected="false">Registrar usuario</a>
@@ -75,11 +75,8 @@
                         <div class="tab-pane fade" id="usuariosInactivos" role="tabpanel" aria-labelledby="usuariosInactivos-tab">
                             <div class="row">
                                 <div class=" scrollable col" id="usuariosInactivosLista">
-                                    <!--<table class="table table-sm table-hover header-fixed"  id="song-listing">-->
-                                        <!--contenido-->
-                                    <!--</table>-->
 
-                                    <table class='table table-sm table-striped header-fixed'  id='usuarios-inactivos-listing'>
+                                    <!--<table class='table table-sm table-striped header-fixed'  id='usuarios-inactivos-listing'>
                                         <thead class='thead-light'><tr><th class='nombre-col'>Nombre</th><th class='nss-col'>NSS</th><th class='poliza-col'>Poliza</th><th class='act1-col'>Acción 1</th></tr></thead>
 
                                         <tbody class = ''>
@@ -87,9 +84,7 @@
                                                 <td class='nombre-col'>nombre</td><td class='nss-col'>1231231232</td><td class='poliza-col'>A01362655</td><td class='act1-col'><a href='#'class='btn btn-outline-primary' role='button'>Activar paciente</a></td>
                                             </tr>
                                         </tbody>
-                                    </table>
-                                    </br></br></br>
-                                    </br></br></br>
+                                    </table>-->
 
                                 </div>
                             </div>
