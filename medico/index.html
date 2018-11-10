@@ -5,7 +5,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        
         <title>Document</title>
+
+        <script>
+           function login(){
+               // alert("hola");
+                var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://172.20.10.8:5000/api/v1/doctors/search_doctors",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "cache-control": "no-cache",
+                },
+                "processData": false,
+                //"data": " {\"action\": \"LOGIN\",\"user\": \"gabo@doctor.com\",\"password\": \"password\"}"
+                "data": ' {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}'
+                }
+
+                $.ajax(settings).done(function (response) {
+                    alert(response);
+                });
+            }
+
+            /*$("#submit").click(function(e) {
+                var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://172.20.10.8:5000/api/v1/doctors/search_doctors",
+                "method": "POST",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "cache-control": "no-cache",
+                },
+                "processData": false,
+                //"data": " {\"action\": \"LOGIN\",\"user\": \"gabo@doctor.com\",\"password\": \"password\"}"
+                "data": ' {"action": "LOGIN","user": "gabo@doctor.com","password": "password"}'
+                }
+
+                $.ajax(settings).done(function (response) {
+                    alert(response);
+                });
+    });*/
+        </script>
     </head>
     <body>
         <div class="container-fluid">
@@ -30,7 +78,8 @@
                                   <label for="inputPassword">Password</label>
                                   <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                                 </div>
-                                <button type="submit" class="btn btn-primary" >Submit</button>
+                                <button id="submit" onclick="login()" class="btn btn-primary" >Submit</button>
+                                <!--<button type="submit" class="btn btn-primary" >Submit</button>-->
                                 <!--<a href="main.html" role="button" class="btn btn-primary" >Submit</a>-->
                               </form>
                         </div>
