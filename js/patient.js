@@ -19,14 +19,14 @@ function loadActiveUsers(){
     "processData": false,
     "data": " {\"action\": \"GET\",\"user_type\": \"active\"}"
   }
-  
+
   $.ajax(settings).done(function (response) {
     console.log(response);
     var html = "";
 
     html += "<table class='table table-sm table-hover header-fixed'  id='usuarios-activos-listing'>";
     html += "<thead class='thead-light'><tr><th class='nombre-col'>Nombre</th><th class='nss-col'>NSS</th><th class='poliza-col'>Poliza</th><th class='act1-col'>Acción 1</th><th class='act2-col'>Acción 2</th></tr></thead>";
-    
+
     html += "<tbody class = ''>";
     for (var i = 0; i < response.length; i++) {
       var ssn = response[i].ss_num;
@@ -34,10 +34,10 @@ function loadActiveUsers(){
       var poliza = response[i].ass_policy;
 
       html += "<tr class='usuario-row' data-href='#'>";
-      html += "<td class='nombre-col'>"+nombre+"</td><td class='nss-col'>"+ssn+"</td><td class='poliza-col'>"+poliza+"</td><td class='act1-col'><a href='paciente.html?"+ssn+"' class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a onclick='modify("+ssn+")' href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>";
+      html += "<td class='nombre-col'>"+nombre+"</td><td class='nss-col'>"+ssn+"</td><td class='poliza-col'>"+poliza+"</td><td class='act1-col'><a href='paciente.html?"+ssn+"' class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a onclick='modify("+ssn+")' href='#'class='btn btn-outline-secondary' role='button' onclick='modify2("+ssn+")'>Modificar Status</a></td>";
       html += "</tr>";
     }
-    
+
     html += "</tbody>";
     html += "</table>";
     html += "</br></br></br>";
@@ -64,14 +64,14 @@ function loadInactiveUsers(){
     "processData": false,
     "data": " {\"action\": \"GET\",\"user_type\": \"inactive\"}"
   }
-  
+
   $.ajax(settings).done(function (response) {
     console.log(response);
     var html = "";
 
     html += "<table class='table table-sm table-hover header-fixed'  id='usuarios-activos-listing'>";
     html += "<thead class='thead-light'><tr><th class='nombre-col'>Nombre</th><th class='nss-col'>NSS</th><th class='poliza-col'>Poliza</th><th class='act1-col'>Acción 1</th></thead>";
-    
+
     html += "<tbody class = ''>";
     for (var i = 0; i < response.length; i++) {
       var ssn = response[i].ss_num;
@@ -82,7 +82,7 @@ function loadInactiveUsers(){
       html += "<td class='nombre-col'>"+nombre+"</td><td class='nss-col'>"+ssn+"</td><td class='poliza-col'>"+poliza+"</td><td class='act2-col'><a onclick='modify2("+ssn+")' href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>";
       html += "</tr>";
     }
-    
+
     html += "</tbody>";
     html += "</table>";
     html += "</br></br></br>";
@@ -96,5 +96,5 @@ function deleteChildsElement(nombre){
   var element = document.getElementById(nombre);
   while (element.hasChildNodes()) {
       element.removeChild(element.lastChild);
-  }  
+  }
 }
