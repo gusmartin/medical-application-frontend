@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -6,11 +9,36 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>*/
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
         <title>Document</title>
+        <script>
+        function reg(){
+          var npac= $("#nPaciente").val();
+
+          var nseg= $("#nSeguro").val();
+          var npol= $("#nPoliza").val();
+
+          alert(npac);
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://172.20.10.8:5000/api/v1/patients/search_patients",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "processData": false,
+           "data": "{\n\t\"action\": \"REGISTER\",\n\t\"name\": \""+npac+"\",\n\t\"ss_num\": \""+nseg+"\",\n\t\"ass_policy\": \""+npol+"\"\n}"}
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+        });
+      }
+          </script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -68,29 +96,46 @@
                             <div class="tab-pane fade" id="crearUsuario" role="tabpanel" aria-labelledby="crearUsuario-tab">
                               <br><br><br>
                               <form>
-                                <table align="center">
-                                  <tr>
-                                    <td>Nombre del Paciente</td><td><input type="text" id="nPaciente"</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Número de Seguro Social</td><td><input type="text" id="nSeguro"</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Número de Póliza de Seguro</td><td><input type="text" id="nPoliza"</td>
-                                  </tr>
+                                <div class="container">
+                                <div class=row>
+                                  <div class="col-2">
+                                  </div>
+                                    <div class="col-4">Nombre del Paciente</div>
+                                    <div class="col-4"><input type="text" id="nPaciente"></div>
+                                    <div class="col-2">
+                                    </div>
+                                    </div>
 
-                                <tr align="center">
-                                <td align="center"><button type="submit" class="btn btn-primary">Submit</button></td>
-                                </tr>
+                                <div class=row>
+                                  <div class="col-2">
+                                  </div>
+                                  <div class="col-4">Número de Seguro Social  </div>
+                                  <div class="col-4"><input type="text" id="nSeguro"> </div>
+                                  <div class="col-2">
+                                  </div>
+                                </div>
+                                <div class=row>
+                                  <div class="col-2">
+                                  </div>
+                                  <div class="col-4">Número de Póliza de Seguro</div>
+                                  <div class="col-4"><input type="text" id="nPoliza"></div>
+                                  <div class="col-2">
+                                  </div>
+                                </div>
+
+                                <div class=row>
+                                    <div class="col-4">
+                                    </div>
+                                    <div class="col-4">
+                                <button type="submit" class="btn btn-primary" onclick="reg()">Submit</button>
+                              </div>
+                              <div class="col-4"></div></div>
                                 </table>
 
-
+                                </div>
                               </form>
                             </div>
                           </div>
-
-
-
                 </div>
             </div>
         </div>
