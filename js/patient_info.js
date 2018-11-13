@@ -55,9 +55,9 @@ function loadRecetas(){
         html += '<div class="card">';
        
         for (var i = 0; i < response.length; i++) {
-            html += '<div class="card-header" id="headingOne">';
+            html += '<div class="card-header" id="heading'+i+'">';
             html += '<h5 class="mb-0">';
-            html += '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">';
+            html += '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'+i+'" aria-expanded="true" aria-controls="collapse'+i+'">';
 
             var date = response[i].date;
             var diagnose = response[i].diagnose;
@@ -77,7 +77,7 @@ function loadRecetas(){
             html += '</h5>';
             html += '</div>';
 
-            html += '<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">';
+            html += '<div id="collapse'+i+'" class="collapse show" aria-labelledby="heading'+i+'" data-parent="#accordionExample">';
             html += '<div class="card-body">';
             html += diagnose+' '+drug+' '+duration+' '+interval+' '+sickness+' '+symptoms+' ';
        
