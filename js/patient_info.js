@@ -1,5 +1,6 @@
 var jsonResponse;
 var prescriptions;
+var url = "http://localhost:5000/api/v1/patients/search_patients";
 
 $( document ).ready(function() {
     loadBasicInfoUser();
@@ -10,7 +11,7 @@ function loadBasicInfoUser(){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://172.20.10.8:5000/api/v1/patients/search_patients",
+        "url": url,
         "method": "POST",
         "headers": {
             "Content-Type": "application/json"
@@ -38,7 +39,7 @@ function loadRecetas(){
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "http://172.20.10.8:5000/api/v1/patients/search_patients",
+        "url": url,
         "method": "POST",
         "headers": {
             "Content-Type": "application/json"
