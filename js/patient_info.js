@@ -16,7 +16,7 @@ function loadBasicInfoUser(){
             "Content-Type": "application/json"
         },
         "processData": false,
-        "data": "{\n\t\"action\": \"GET_PATIENT\",\n\t\"ss_num\": \"1\"\n}"
+        "data": "{\n\t\"action\": \"GET_PATIENT\",\n\t\"ss_num\": \""+getParameterByName('ssn')+"\"\n}"
     }
       
     $.ajax(settings).done(function (response) {
@@ -41,10 +41,10 @@ function loadRecetas(){
         "url": "http://172.20.10.8:5000/api/v1/patients/search_patients",
         "method": "POST",
         "headers": {
-          "Content-Type": "application/json"
+            "Content-Type": "application/json"
         },
         "processData": false,
-        "data": "{\n\t\"action\": \"GET_PRESCRIPTION\",\n\t\"ss_num\": \"1\"\n}"
+        "data": "{\n\t\"action\": \"GET_PRESCRIPTION\",\n\t\"ss_num\": \""+getParameterByName('ssn')+"\"\n}"
       }
       
       $.ajax(settings).done(function (response) {
@@ -53,11 +53,6 @@ function loadRecetas(){
         var html = "";
 
         html += '<div class="card">';
-
-        
-        
-        
-         
        
         for (var i = 0; i < response.length; i++) {
             html += '<div class="card-header" id="headingOne">';
@@ -90,4 +85,14 @@ function loadRecetas(){
 
         $("#accordionExample").append(html);
       });
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

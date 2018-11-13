@@ -34,7 +34,7 @@ function loadActiveUsers(){
             var poliza = response[i].ass_policy;
 
             html += "<tr class='usuario-row' data-href='#'>";
-            html += "<td class='nombre-col'>"+nombre+"</td><td class='nss-col'>"+ssn+"</td><td class='poliza-col'>"+poliza+"</td><td class='act1-col'><a href='paciente.html?"+ssn+"' class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a onclick='modify("+ssn+")' href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>";
+            html += "<td class='nombre-col'>"+nombre+"</td><td class='nss-col'>"+ssn+"</td><td class='poliza-col'>"+poliza+"</td><td class='act1-col'><a href='paciente.html?ssn="+ssn+"' class='btn btn-outline-primary' role='button'>Ver Reporte</a></td><td class='act2-col'><a onclick='modify("+ssn+")' href='#'class='btn btn-outline-secondary' role='button'>Modificar Status</a></td>";
             html += "</tr>";
         }
         
