@@ -71,9 +71,14 @@ function loadRecetas(){
 
             html += ' '+date;
             html += '</button>';
-            html += '<button class="btn btn-primary">';
-            html += 'Modificar receta';
-            html += '</button>';
+
+            if(i == 0){
+                html += '<button class="btn btn-primary" onclick="">';
+                html += 'Modificar receta';
+                html += '</button>';
+            }
+
+
             html += '</h5>';
             html += '</div>';
 
