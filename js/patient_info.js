@@ -73,11 +73,10 @@ function loadRecetas(){
             html += '</button>';
 
             if(i == 0){
-                html += '<button class="btn btn-primary" onclick="">';
+                html += '<button class="btn btn-primary" onclick="modifyPrescription('+getParameterByName('ssn')+')">';
                 html += 'Modificar receta';
                 html += '</button>';
             }
-
 
             html += '</h5>';
             html += '</div>';
