@@ -76,6 +76,9 @@ function loadRecetas(){
                 html += '<button class="btn btn-primary" onclick="modifyPrescription('+getParameterByName('ssn')+')">';
                 html += 'Modificar receta';
                 html += '</button>';
+                html += '<button class="btn btn-danger" onclick="terminateDiagnosis('+getParameterByName('ssn')+')">';
+                html += 'Terminar tratamiento';
+                html += '</button>';
             }
 
             html += '</h5>';
